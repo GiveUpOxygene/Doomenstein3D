@@ -165,7 +165,6 @@ void raycasting(player *p,graphic *G, int tab[][N],int dist[],textures *T)
     float d_angle = FOV/NRAYS;        //variation d'angle
     float theta = angle_trigo(p->angle - FOV/2);   //angle de direction du rayon
     
-    #pragma omp parallel for 
     for(int i=0;i<NRAYS;i++){
         theta = angle_trigo(theta+d_angle); 
         int d = raydist(p,tab,i,theta,G,T,dist);     //Calcule de la distance et dessine les murs
